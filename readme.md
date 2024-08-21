@@ -16,7 +16,7 @@ I’ve put together simple instructions that you can use to visualize changes us
 
 ### Requirements
 
-- You must install Pandoc (http://pandoc.org/) on your machine. Run `pandoc -v` in your terminal to check if it is available.
+- You must install Pandoc (https://pandoc.org/) on your machine. Run `pandoc -v` in your terminal to check if it is available.
 
 ### Usage
 
@@ -56,6 +56,18 @@ I’ve put together simple instructions that you can use to visualize changes us
 4. Create or modify the `.docx` files using proper `.docx` software, like Microsoft Word or LibreOffice.
 
    **WARNING:** Do not create or modify the `.docx` files using terminal or common text editors that have no `.docx` support, as it will break the file and `pandoc` will fail to read it. Remember, `.docx` is a binary file and not a normal text file.
+
+   For UNSTAGED changes, you can view the difference directly by using `git wdiff`. Please note that you'll see empty file when running this command on staged or commited files.:
+
+   ```bash
+   git wdiff FILENAME.docx
+   ```
+
+   or you can simpy use `git gui blame` for both STAGED or UNSTAGED:
+
+   ```bash
+   git gui blame FILENAME.docx
+   ```
 
 5. Stage and commit the files:
 
@@ -126,6 +138,7 @@ To view the history of changes made to the `.md` files (which are the Markdown c
 - View commit history with diffs: `git log -p -- FILENAME.md`
 - Compare two versions: `git diff COMMIT1 COMMIT2 -- FILENAME.md`
 - Word-level diffs: `git wdiff COMMIT1 COMMIT2 -- FILENAME.docx`
-- GUI view: `gitk FILENAME.md`
+- GUI view (gitk): `gitk FILENAME.docx` or `gitk FILENAME.md`
+- GUI view (git gui): `git gui blame FILENAME.docx` or `git gui blame FILENAME.md`
 
 These commands will help you track and inspect the history of changes made to your Markdown files in the repository.
