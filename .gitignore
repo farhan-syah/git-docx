@@ -1,0 +1,22 @@
+# Emacs lock files
+*~lock.*
+
+# Vim swap files
+*.swp
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Other common editor files
+*.sublime-project
+*.sublime-workspace
+
+# Microsoft Word temporary files
+~$*
+*.docx~
+*.doc~
+*.docx~
+*.tmp
